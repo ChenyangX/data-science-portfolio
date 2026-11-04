@@ -4,7 +4,7 @@ University of Macau · CISC7204 · Data Science with Artificial Intelligence App
 
 ## Live website
 
-[https://chenyangx.github.io/data-science-portfolio/](https://chenyangx.github.io/data-science-portfolio/)
+[https://chenyangx.github.io/](https://chenyangx.github.io/)
 
 ## Projects
 
