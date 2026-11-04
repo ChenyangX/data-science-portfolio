@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Chenyang Xu's CISC7204 Data Science Portfolio at the University of Macau">
+  <title>Chenyang Xu | Data Science Portfolio</title>
+  <style>
+    :root { color-scheme: light; --bg: #f6f8fc; --ink: #17243b; --muted: #57657a; --panel: #fff; --line: #dce4ef; --accent: #2358bb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: var(--accent); }
+    a:focus-visible { outline: 3px solid #8bb5ff; outline-offset: 4px; }
+    .wrap { width: min(1040px, calc(100% - 40px)); margin: auto; }
+    header { padding: 84px 0 70px; background: linear-gradient(135deg,#102a50,#244c91); color: white; }
+    header a { color: white; }
+    .tag { text-transform: uppercase; font-size: .78rem; letter-spacing: .16em; font-weight: 700; color: #bed5ff; }
+    h1 { font-size: clamp(2.6rem, 7vw, 4.5rem); line-height: 1.1; margin: 14px 0; }
+    h2 { font-size: 1.9rem; margin: 0 0 22px; }
+    h3 { margin: 0 0 8px; font-size: 1.28rem; }
+    .lead { font-size: 1.12rem; max-width: 740px; color: #e0ebfc; }
+    nav { display: flex; flex-wrap: wrap; gap: 22px; padding-top: 26px; }
+    nav a { font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+    main { padding: 56px 0; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px,1fr)); gap: 20px; }
+    article { background: var(--panel); padding: 27px; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 8px 30px rgba(20,47,84,.05); }
+    article p { color: var(--muted); }
+    .eyebrow { color: var(--accent); text-transform: uppercase; font-size: .73rem; letter-spacing: .09em; font-weight: 750; }
+    .button { display: inline-block; margin-top: 12px; text-decoration: none; font-weight: 700; }
+    section { margin-bottom: 55px; }
+    .notes { max-width: 790px; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header><div class="wrap">
+    <div class="tag">University of Macau · CISC7204</div>
+    <h1>Chenyang Xu</h1>
+    <p class="lead">Data Science Portfolio — Python analysis, data visualization, and a semester project exploring Macao tourism trends.</p>
+    <nav aria-label="Main navigation">
+      <a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+  </div></header>
+  <main class="wrap">
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Selected projects</h2>
+      <div class="cards">
+        <article><div class="eyebrow">Semester Project</div>
+          <h3>Macao Tourism Analysis</h3>
+          <p>Exploring visitor trends, recovery patterns, and tourism-related indicators using data analysis and visual storytelling.</p>
+          <a class="button" href="https://github.com/ChenyangX/macao-tourism-analysis">View project repository →</a>
+        </article>
+        <article><div class="eyebrow">Assignment 01</div>
+          <h3>Data Analysis with Python</h3>
+          <p>Coursework using Python notebooks for data processing, exploration, and analytical workflows.</p>
+          <a class="button" href="https://github.com/ChenyangX/cisc7204-assignment-01">View assignment repository →</a>
+        </article>
+        <article><div class="eyebrow">Assignment 02</div>
+          <h3>Data Visualization with Python</h3>
+          <p>Python visualization exercises, charts, and applications that emphasize readable and effective data communication.</p>
+          <a class="button" href="https://github.com/ChenyangX/cisc7204-assignment-02">View assignment repository →</a>
+        </article>
+      </div>
+    </section>
+    <section id="about"><h2>About the portfolio</h2>
+      <p class="notes">This website highlights my learning in CISC7204 at the University of Macau. Each linked repository provides the corresponding project materials and documentation as they are published. I focus on clear methods, reproducibility, and communicating insights through appropriate visualizations.</p>
+      <p><a href="REFLECTION.md">Read my portfolio reflection</a></p>
+    </section>
+    <section id="contact"><h2>Contact</h2>
+      <p>GitHub: <a href="https://github.com/ChenyangX">github.com/ChenyangX</a></p>
+    </section>
+  </main>
+  <footer><div class="wrap">Chenyang Xu · CISC7204 Data Science Portfolio · University of Macau</div></footer>
+</body></html>
