@@ -1,74 +1,79 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Chenyang Xu's CISC7204 Data Science Portfolio at the University of Macau">
-  <title>Chenyang Xu | Data Science Portfolio</title>
-  <style>
-    :root { color-scheme: light; --bg: #f6f8fc; --ink: #17243b; --muted: #57657a; --panel: #fff; --line: #dce4ef; --accent: #2358bb; }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-    a { color: var(--accent); }
-    a:focus-visible { outline: 3px solid #8bb5ff; outline-offset: 4px; }
-    .wrap { width: min(1040px, calc(100% - 40px)); margin: auto; }
-    header { padding: 84px 0 70px; background: linear-gradient(135deg,#102a50,#244c91); color: white; }
-    header a { color: white; }
-    .tag { text-transform: uppercase; font-size: .78rem; letter-spacing: .16em; font-weight: 700; color: #bed5ff; }
-    h1 { font-size: clamp(2.6rem, 7vw, 4.5rem); line-height: 1.1; margin: 14px 0; }
-    h2 { font-size: 1.9rem; margin: 0 0 22px; }
-    h3 { margin: 0 0 8px; font-size: 1.28rem; }
-    .lead { font-size: 1.12rem; max-width: 740px; color: #e0ebfc; }
-    nav { display: flex; flex-wrap: wrap; gap: 22px; padding-top: 26px; }
-    nav a { font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 5px; }
-    main { padding: 56px 0; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px,1fr)); gap: 20px; }
-    article { background: var(--panel); padding: 27px; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 8px 30px rgba(20,47,84,.05); }
-    article p { color: var(--muted); }
-    .eyebrow { color: var(--accent); text-transform: uppercase; font-size: .73rem; letter-spacing: .09em; font-weight: 750; }
-    .button { display: inline-block; margin-top: 12px; text-decoration: none; font-weight: 700; }
-    section { margin-bottom: 55px; }
-    .notes { max-width: 790px; color: var(--muted); }
-    footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Chenyang Xu — CISC7204 Data Science Portfolio, University of Macau; Macao Tourism Analysis, Data Analysis and Data Visualization." name="description"/>
+<meta content="Chenyang Xu — Data Science Portfolio" property="og:title"/>
+<meta content="CISC7204 projects: Macao tourism, Python data analysis and data visualization." property="og:description"/>
+<meta content="website" property="og:type"/>
+<title>Chenyang Xu — Data Science Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* Art direction: analytical field notebook → scholarly, precise, quietly confident
+       Palette: warm neutral, accent: deep teal drawn from technical plotting ink
+       Typography: Newsreader + Manrope/IBM Plex Mono — editorial insight with technical clarity
+       Density: spacious */
+    :root,[data-theme="light"]{
+      --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);--text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);--text-3xl:clamp(2.5rem,1rem + 4vw,5rem);--text-hero:clamp(3rem,.5rem + 7vw,8rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;--space-32:8rem;
+      --font-display:'Newsreader',Georgia,serif;--font-body:'Manrope','Helvetica Neue',sans-serif;--font-mono:'IBM Plex Mono',monospace;
+      --color-bg:#f3f1ea;--color-surface:#faf9f5;--color-surface-2:#ffffff;--color-surface-offset:#e9e6dc;--color-surface-offset-2:#dfdbcf;--color-surface-dynamic:#d4d0c4;--color-divider:#d9d5ca;--color-border:#cbc7bb;--color-text:#1f2523;--color-text-muted:#59615e;--color-text-faint:#777d7b;--color-text-inverse:#fffdf8;--color-primary:#006b63;--color-primary-hover:#00544e;--color-primary-active:#003d39;--color-primary-highlight:#d6e7e3;--color-orange:#b86718;
+      --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--radius-full:9999px;--transition-interactive:180ms cubic-bezier(.16,1,.3,1);--shadow-sm:0 1px 2px oklch(.2 .01 80/.06);--shadow-md:0 6px 22px oklch(.2 .01 80/.1);--content-narrow:640px;--content-default:960px;--content-wide:1200px
+    }
+    [data-theme="dark"]{--color-bg:#151817;--color-surface:#1b1f1e;--color-surface-2:#222725;--color-surface-offset:#2a302e;--color-surface-offset-2:#313835;--color-surface-dynamic:#3b4340;--color-divider:#303633;--color-border:#434a47;--color-text:#eef0eb;--color-text-muted:#b7bfbb;--color-text-faint:#919995;--color-text-inverse:#10211e;--color-primary:#6fb7ad;--color-primary-hover:#8bc9c0;--color-primary-active:#a7ddd5;--color-primary-highlight:#243d39;--color-orange:#e1a363;--shadow-sm:0 1px 2px oklch(0 0 0/.2);--shadow-md:0 8px 26px oklch(0 0 0/.32)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{-moz-text-size-adjust:none;-webkit-text-size-adjust:none;text-size-adjust:none;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:var(--space-20)}body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg)}img,svg{display:block;max-width:100%;height:auto}button{font:inherit;color:inherit;cursor:pointer;background:none;border:none}a{color:inherit;text-decoration:none}a,button{transition:color var(--transition-interactive),background var(--transition-interactive),border-color var(--transition-interactive),transform var(--transition-interactive)}p,li{max-width:72ch;text-wrap:pretty}h1,h2,h3{line-height:1.08;text-wrap:balance}h1,h2{font-family:var(--font-display);font-weight:600}::selection{background:color-mix(in oklab,var(--color-primary) 24%,transparent)}:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}.skip{position:absolute;left:var(--space-4);top:-100px;padding:var(--space-3) var(--space-4);background:var(--color-primary);color:var(--color-text-inverse);z-index:20}.skip:focus{top:var(--space-4)}.container{width:min(calc(100% - 2 * var(--space-4)),var(--content-wide));margin-inline:auto}.eyebrow{font:500 var(--text-xs)/1.4 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--color-primary)}
+    header{position:sticky;top:0;z-index:10;background:color-mix(in oklab,var(--color-bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in oklab,var(--color-text) 10%,transparent)}.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:var(--space-4)}.brand{display:flex;align-items:center;gap:var(--space-3);font-weight:700;font-size:var(--text-sm)}.mark{width:34px;height:34px;color:var(--color-primary)}.navlinks{display:flex;align-items:center;gap:var(--space-6);font-size:var(--text-sm)}.navlinks a:hover{color:var(--color-primary)}.icon-btn{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--color-border);border-radius:var(--radius-full);background:var(--color-surface)}
+    .hero{padding-block:clamp(var(--space-16),8vw,var(--space-32)) var(--space-16)}.hero-grid{display:grid;gap:var(--space-10);align-items:end}.hero-copy h1{font-size:var(--text-3xl);max-width:12ch;margin-block:var(--space-4)}.lede{font-size:var(--text-lg);color:var(--color-text-muted);max-width:52ch}.availability{display:inline-flex;align-items:center;gap:var(--space-2);margin-top:var(--space-6);font:500 var(--text-sm) var(--font-mono)}.dot{width:8px;height:8px;border-radius:50%;background:var(--color-primary);box-shadow:0 0 0 5px var(--color-primary-highlight)}.hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-8)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:48px;padding:var(--space-3) var(--space-5);border:1px solid var(--color-border);border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;background:var(--color-surface)}.btn:hover{transform:translateY(-2px);border-color:var(--color-primary)}.btn-primary{background:var(--color-primary);color:var(--color-text-inverse);border-color:transparent}.btn-primary:hover{background:var(--color-primary-hover);border-color:transparent}.hero-visual{position:relative}.hero-visual img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius-xl);border:1px solid var(--color-border);box-shadow:var(--shadow-md)}.visual-note{position:absolute;right:var(--space-4);bottom:calc(-1 * var(--space-5));padding:var(--space-3) var(--space-4);background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-md);font:500 var(--text-xs) var(--font-mono);box-shadow:var(--shadow-sm)}
+    section{padding-block:clamp(var(--space-16),7vw,var(--space-24))}.section-head{display:grid;gap:var(--space-4);margin-bottom:var(--space-10);border-top:1px solid var(--color-border);padding-top:var(--space-5)}.section-head h2{font-size:var(--text-2xl);max-width:15ch}.section-head p{color:var(--color-text-muted)}.projects{display:grid;gap:var(--space-6)}.project{display:grid;background:var(--color-surface);border:1px solid color-mix(in oklab,var(--color-text) 12%,transparent);border-radius:var(--radius-lg);overflow:hidden;content-visibility:auto}.project-featured{grid-template-columns:1fr}.project-visual{min-height:240px;display:grid;place-items:center;padding:var(--space-8);background:var(--color-primary-highlight);overflow:hidden}.mini-chart{width:min(100%,470px);height:auto;color:var(--color-primary)}.project-body{padding:clamp(var(--space-6),4vw,var(--space-10));display:flex;flex-direction:column;align-items:flex-start}.project-index{font:500 var(--text-xs) var(--font-mono);color:var(--color-primary)}.project h3{font-size:var(--text-xl);margin:var(--space-4) 0 var(--space-3)}.project p{color:var(--color-text-muted)}.metric{margin-block:var(--space-5);padding-block:var(--space-4);border-block:1px solid var(--color-divider);width:100%;display:flex;gap:var(--space-6);align-items:baseline}.metric strong{font:600 var(--text-xl) var(--font-display);color:var(--color-text)}.metric span{font-size:var(--text-sm);color:var(--color-text-muted)}.tags{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:auto;padding-top:var(--space-5)}.tag{padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);background:var(--color-surface-offset);font:500 var(--text-xs) var(--font-mono)}.project-link{margin-top:var(--space-6);font-size:var(--text-sm);font-weight:700;color:var(--color-primary)}.project-link:hover{color:var(--color-primary-hover)}.small-grid{display:grid;gap:var(--space-6)}.small-grid .project-visual{min-height:190px}.forecast-bars{display:flex;align-items:end;gap:var(--space-3);height:130px;width:80%;border-bottom:1px solid var(--color-text-muted)}.forecast-bars span{flex:1;background:var(--color-primary);min-width:16px}.forecast-bars span:nth-child(2n){background:color-mix(in oklab,var(--color-primary) 45%,var(--color-surface))}.matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-2);width:min(240px,80%);aspect-ratio:1}.matrix i{background:color-mix(in oklab,var(--color-primary) var(--v),var(--color-surface));border-radius:var(--radius-sm)}
+    .about-grid{display:grid;gap:var(--space-10)}.about-copy h2{font-size:var(--text-2xl);margin:var(--space-3) 0 var(--space-6)}.about-copy p+p{margin-top:var(--space-4)}.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-5);align-self:start}.skill{border-top:1px solid var(--color-border);padding-top:var(--space-4)}.skill strong{display:block;font-size:var(--text-sm);margin-bottom:var(--space-1)}.skill span{font-size:var(--text-xs);color:var(--color-text-muted)}
+    .process{background:var(--color-text);color:var(--color-bg)}.process .eyebrow{color:var(--color-primary)}.process-grid{display:grid;gap:var(--space-8)}.process h2{font-size:var(--text-2xl)}.steps{display:grid;gap:var(--space-6)}.step{border-top:1px solid color-mix(in oklab,var(--color-bg) 25%,transparent);padding-top:var(--space-4)}.step b{font:500 var(--text-xs) var(--font-mono);color:var(--color-primary)}.step h3{font-size:var(--text-lg);margin-block:var(--space-2)}.step p{font-size:var(--text-sm);color:color-mix(in oklab,var(--color-bg) 72%,transparent)}
+    .contact{text-align:left}.contact h2{font-size:var(--text-3xl);max-width:12ch;margin-block:var(--space-3) var(--space-6)}.contact p{color:var(--color-text-muted);max-width:52ch}.contact-row{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-8)}footer{border-top:1px solid var(--color-border);padding-block:var(--space-8);font-size:var(--text-xs);color:var(--color-text-muted)}.footer-row{display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap}.reveal{opacity:0;transform:translateY(18px);transition:opacity 700ms cubic-bezier(.16,1,.3,1),transform 700ms cubic-bezier(.16,1,.3,1)}.reveal.visible{opacity:1;transform:none}
+    @media(min-width:760px){.container{width:min(calc(100% - 2 * var(--space-8)),var(--content-wide))}.hero-grid{grid-template-columns:1.05fr .95fr}.section-head{grid-template-columns:1fr 1fr;align-items:end}.project-featured{grid-template-columns:1.06fr .94fr}.small-grid{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1.15fr .85fr}.process-grid{grid-template-columns:.65fr 1.35fr}.steps{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:680px){.navlinks a{display:none}.hero{padding-top:var(--space-12)}.hero-copy h1{font-size:var(--text-2xl)}.section-head h2,.about-copy h2{font-size:var(--text-xl)}.project h3{font-size:var(--text-lg)}.skills{grid-template-columns:1fr}.contact h2{font-size:var(--text-2xl)}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
 <body>
-  <header><div class="wrap">
-    <div class="tag">University of Macau · CISC7204</div>
-    <h1>Chenyang Xu</h1>
-    <p class="lead">Data Science Portfolio — Python analysis, data visualization, and a semester project exploring Macao tourism trends.</p>
-    <nav aria-label="Main navigation">
-      <a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
-    </nav>
-  </div></header>
-  <main class="wrap">
-    <section id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Selected projects</h2>
-      <div class="cards">
-        <article><div class="eyebrow">Semester Project</div>
-          <h3>Macao Tourism Analysis</h3>
-          <p>Exploring visitor trends, recovery patterns, and tourism-related indicators using data analysis and visual storytelling.</p>
-          <a class="button" href="https://github.com/ChenyangX/macao-tourism-analysis">View project repository →</a>
-        </article>
-        <article><div class="eyebrow">Assignment 01</div>
-          <h3>Data Analysis with Python</h3>
-          <p>Coursework using Python notebooks for data processing, exploration, and analytical workflows.</p>
-          <a class="button" href="https://github.com/ChenyangX/cisc7204-assignment-01">View assignment repository →</a>
-        </article>
-        <article><div class="eyebrow">Assignment 02</div>
-          <h3>Data Visualization with Python</h3>
-          <p>Python visualization exercises, charts, and applications that emphasize readable and effective data communication.</p>
-          <a class="button" href="https://github.com/ChenyangX/cisc7204-assignment-02">View assignment repository →</a>
-        </article>
-      </div>
-    </section>
-    <section id="about"><h2>About the portfolio</h2>
-      <p class="notes">This website highlights my learning in CISC7204 at the University of Macau. Each linked repository provides the corresponding project materials and documentation as they are published. I focus on clear methods, reproducibility, and communicating insights through appropriate visualizations.</p>
-      <p><a href="REFLECTION.md">Read my portfolio reflection</a></p>
-    </section>
-    <section id="contact"><h2>Contact</h2>
-      <p>GitHub: <a href="https://github.com/ChenyangX">github.com/ChenyangX</a></p>
-    </section>
-  </main>
-  <footer><div class="wrap">Chenyang Xu · CISC7204 Data Science Portfolio · University of Macau</div></footer>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<nav aria-label="Primary navigation" class="nav container">
+<a aria-label="Chenyang Xu home" class="brand" href="#top">Chenyang Xu / Data Science</a>
+<div class="navlinks"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a><button aria-label="Switch theme" class="icon-btn" data-theme-toggle=""><svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div>
+</nav>
+</header>
+<main id="main">
+<section class="hero" id="top">
+<div class="container hero-grid">
+<div class="hero-copy reveal"><p class="eyebrow">University of Macau · CISC7204 · Data Science</p><h1>From raw data to clear insights.</h1><p class="lede">I am Chenyang Xu. This portfolio presents my CISC7204 semester project on Macao tourism and two Python coursework collections in data analysis and visualization.</p><div class="availability">Academic data science portfolio · 2026</div><div class="hero-actions"><a class="btn btn-primary" href="#work">Explore projects</a><a class="btn" href="https://github.com/ChenyangX">GitHub profile</a></div></div>
+<figure class="hero-visual reveal"><img alt="Analytical field notebook showing plots, code, and model evaluation notes" decoding="async" height="1024" src="./assets/data-fieldnotes.png" width="1536"/><figcaption class="visual-note">Data → analysis → visualization</figcaption></figure>
+</div>
+</section>
+<section id="work">
+<div class="container">
+<div class="section-head reveal"><div><p class="eyebrow">CISC7204 Projects</p><h2>Three projects, one portfolio.</h2></div><p>Browse the original notebooks, scripts, charts, datasets and supporting notes in these public repositories.</p></div>
+<div class="projects">
+<article class="project reveal"><div class="project-copy"><p class="eyebrow">Semester Project</p><h3>Macao Tourism Recovery and Spending</h3><p>Historical visitor trends, source markets, accommodation types and tourism spending, analyzed and visualized with Python.</p><p><a class="btn btn-primary" href="https://github.com/ChenyangX/macao-tourism-analysis">View project repository ↗</a></p></div></article>
+<article class="project reveal"><div class="project-copy"><p class="eyebrow">Assignment 01</p><h3>Data Analysis with Python</h3><p>Twelve original coursework notebooks across six modules, documenting data preparation, Python analysis and exploratory workflows.</p><p><a class="btn btn-primary" href="https://github.com/ChenyangX/cisc7204-assignment-01">View assignment repository ↗</a></p></div></article>
+<article class="project reveal"><div class="project-copy"><p class="eyebrow">Assignment 02</p><h3>Data Visualization with Python</h3><p>Original course notebooks and Dash Python scripts, preserving the notebook outputs and demonstrating static and interactive charts.</p><p><a class="btn btn-primary" href="https://github.com/ChenyangX/cisc7204-assignment-02">View assignment repository ↗</a></p></div></article>
+</div>
+</div>
+</section>
+<section id="about">
+<div class="container about-grid">
+<div class="about-copy reveal"><p class="eyebrow">About</p><h2>Learning by building.</h2><p>Created for the University of Macau CISC7204 Data Visualization course, this portfolio shares my coursework and semester project in a reproducible format.</p><p>My interests include Python data analysis, visual communication, machine learning and the responsible interpretation of real-world datasets.</p><p><a href="REFLECTION.md">Read the 200-word English reflection →</a></p></div>
+<div class="skills reveal"><div class="skill"><strong>Analysis</strong><span>Python, pandas, notebooks</span></div><div class="skill"><strong>Visualization</strong><span>Matplotlib, Plotly, Dash</span></div><div class="skill"><strong>Tourism research</strong><span>Macao visitor and spending trends</span></div><div class="skill"><strong>Documentation</strong><span>Reproducible project repositories</span></div></div>
+</div>
+</section>
+
+<section class="contact" id="contact"><div class="container reveal"><p class="eyebrow">Contact</p><h2>Explore my work on GitHub.</h2><p>Source files and documentation are published in the linked project repositories.</p><div class="contact-row"><a class="btn btn-primary" href="https://github.com/ChenyangX" rel="noopener noreferrer" target="_blank">GitHub ↗</a></div></div></section>
+</main>
+<footer>© Chenyang Xu · University of Macau · CISC7204</footer>
+<script>
+(function(){const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';const icon=()=>t.innerHTML=d==='dark'?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';r.setAttribute('data-theme',d);icon();t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');icon()})})();
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body></html>
